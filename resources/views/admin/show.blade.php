@@ -10,7 +10,7 @@
     <tbody>
         <tr>
             <td>{{$group->name}}</td>
-            <td>{{$group->count}}</td>
+            <td>{{$group->count_}}</td>
         </tr>
 
         <tr>

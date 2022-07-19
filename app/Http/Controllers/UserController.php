@@ -52,9 +52,9 @@ class UserController extends Controller
            'groups'=>$id
         ]);
         $group = Groups::where('id',$id)->get()->first();
-        $count = $group->count;
+        $count = $group->count_;
         $group->update([
-            'count'=>++$count
+            'count_'=>++$count
         ]);
         return redirect('/group')->with('status', 'You Selected Group ' . Groups::where('id',$id)->get()->first()->name);
 

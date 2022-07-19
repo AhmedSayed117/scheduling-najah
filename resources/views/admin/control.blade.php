@@ -26,7 +26,7 @@
             <tr>
                 <th>{{$c++}}</th>
                 <td>{{$group->name}}</td>
-                <td>{{$group->count}}</td>
+                <td>{{$group->count_}}</td>
                 <td>
                     <a type="button" class="btn btn-outline-secondary" href="{{Route('showGroup',$group->id)}}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">

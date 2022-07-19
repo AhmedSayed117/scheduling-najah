@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateCheckinoutTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('checkinouts', function (Blueprint $table) {
-            $table->id();
+        Schema::create('checkinout', function (Blueprint $table) {
+            $table->integer('id', true);
             $table->integer('user_id');
             $table->string('checkin')->nullable();
             $table->string('CheckOut')->nullable();
             $table->string('Currentday')->nullable();
+
+            $table->unique(['user_id', 'Currentday'], 'user_id');
         });
     }
 
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('checkinouts');
+        Schema::dropIfExists('checkinout');
     }
-};
+}

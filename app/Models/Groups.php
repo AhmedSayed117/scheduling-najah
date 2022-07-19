@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Groups extends Model
 {
     use HasFactory;
-    protected $fillable = ['id','name','count','created_at','updated_at'];
+    protected $table = 'groups';
+    protected $fillable = ['id','name','count_','created_at','updated_at'];
     protected $hidden = [];
     public $timestamps =true;
 

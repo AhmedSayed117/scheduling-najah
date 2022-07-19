@@ -21,10 +21,10 @@
                     <th>{{$c1++}}</th>
                     @if(\App\Models\User::where('id',\Illuminate\Support\Facades\Auth::id())->get()->first()->groups == $group->id)
                         <th>{{$group->name}}</th>
-                        <th>{{$group->count}}</th>
+                        <th>{{$group->count_}}</th>
                     @else
                         <td>{{$group->name}}</td>
-                        <td>{{$group->count}}</td>
+                        <td>{{$group->count_}}</td>
                     @endif
 
                 </tr>
@@ -49,7 +49,7 @@
             <tr>
                 <th>{{$c++}}</th>
                 <td>{{$group->name}}</td>
-                <td>{{$group->count}}</td>
+                <td>{{$group->count_}}</td>
                 <td>
                     <button class="btn btn-success">
                        <a href="{{Route('groups',$group->id)}}" style="color: white">
