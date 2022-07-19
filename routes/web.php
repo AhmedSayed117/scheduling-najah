@@ -13,7 +13,6 @@ Route::fallback(function () {
 Route::get('/',[UserController::class,'index']);
 
 Auth::routes();
-Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::post('/checkin', [UserController::class, 'checkin'])->name('checkin');
 Route::post('/checkout', [UserController::class, 'checkout'])->name('checkout');
 Route::get('/group', [UserController::class, 'mygroup'])->name('mygroup');

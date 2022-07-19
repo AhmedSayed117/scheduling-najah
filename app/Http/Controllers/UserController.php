@@ -14,9 +14,10 @@ class UserController extends Controller
     {
         if (Auth::check())
         {
+            if (Auth::id()==1) return redirect(url('/admin'));
             $user = checkinout::with('user')->where('user_id',Auth::id())->orderBy('Currentday','desc')->get()->first();
             return view('main',['user'=>$user]);
-        }else return redirect('login');
+        }else return redirect(url('/login'));
     }
 
     public function checkin(Request $request)

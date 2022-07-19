@@ -1,10 +1,6 @@
 @include('navbar')
 <p style="display: none">{{date_default_timezone_set('Africa/Cairo')}}</p>
-@if(\Illuminate\Support\Facades\Auth::user()->name == 'admin' && \Illuminate\Support\Facades\Auth::id()==1 )
-    <script>
-        document.location ='/admin';
-    </script>
-@endif
+
 @if (session('status'))
     <div class="alert alert-success container">
         {{ session('status') }}
