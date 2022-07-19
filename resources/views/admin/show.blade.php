@@ -21,11 +21,18 @@
         </tr>
         @foreach($users as $user)
         <tr>
-            <td>{{$user->name}}</td>
-            <p style="display: none">{{$u = \App\Models\checkinout::where('user_id',$user->id)->get()->first()}}</p>
-            <td>{{$u->checkin}}</td>
-            <td>{{$u->CheckOut}}</td>
-            <td>{{$u->Currentday}}</td>
+            <p style="display: none">{{$u = \App\Models\checkinout::where('user_id',$user->id)->get()}}</p>
+            @foreach($u as $user1)
+            <tr>
+                <td>{{$user->name}}</td>
+
+                <td>{{$user1->checkin}}</td>
+                <td>{{$user1->CheckOut}}</td>
+                <td>{{$user1->Currentday}}</td>
+
+            </tr>
+
+            @endforeach
         </tr>
         @endforeach
     </tbody>

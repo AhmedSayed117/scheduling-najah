@@ -26,14 +26,14 @@
                         <button class="nav-link" style="cursor: pointer;border: 0;background: 0" onclick="submit()" >logout</button>
                     </form>
                 </li>
-                        @if(!App\Models\Admin::where('user_id',Auth::id())->get()->first())
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{Route('mygroup')}}">Your Group</a>
-                        </li>
+                        @if(!\Illuminate\Support\Facades\Auth::id()==1)
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{Route('mygroup')}}">Your Group</a>
+                            </li>
                         @endif
                 @endif
                     @if(Auth::check())
-                        @if(App\Models\Admin::where('user_id',Auth::id())->get()->first())
+                        @if(\Illuminate\Support\Facades\Auth::id()==1)
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('admin')}}">Admin</a>
                         </li>
